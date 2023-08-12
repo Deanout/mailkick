@@ -1,0 +1,11 @@
+<div id="newsletter">
+  <% if user&.subscribed?(name) %>
+    <%= button_to "Unsub", newsletter_manage_path(name: name), method: :post, data: {turbo_method: :delete} %>
+  <% else %>
+    <div class="newsletter">
+      <h2>Newsletter</h2>
+      <p>Sign up for our newsletter to get the latest news and announcements.</p>
+      <%= button_to "Subscribe", newsletter_manage_path(name: name), method: :post, data: {turbo_method: :delete} %>
+    </div>
+  <% end %>
+</div>

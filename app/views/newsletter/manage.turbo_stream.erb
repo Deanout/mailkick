@@ -1,0 +1,5 @@
+<%= turbo_stream.replace "newsletter", 
+    partial: "shared/manage_newsletter", 
+    locals: { 
+        name: @name, 
+        user: current_user} %>
